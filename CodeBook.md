@@ -18,8 +18,8 @@ The following columns are included and represent the means of the "means and sta
 mean.tBodyAcc.mean.X 
 mean.tBodyAcc.mean.Y
 
-mean.tBodyAcc.mean.Z
-mean.tGravityAcc.mean.X
+mean.tBodyAcc.mean.Z  
+mean.tGravityAcc.mean.X    
 mean.tGravityAcc.mean.Y
 mean.tGravityAcc.mean.Z
 mean.tBodyAccJerk.mean.X
