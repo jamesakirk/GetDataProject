@@ -3,9 +3,7 @@ README.md:
 
 This is the course project for Coursera's "Getting an Cleaning Data", May 2014 session. I will explain the construction of my solution, and describe how to access the resultant data set "data.txt".
 
-
-
-The construction of my run_analysis.R script:
+#The construction of my run_analysis.R script:
 
 First, we read in the data sets to be merged:
 
@@ -19,11 +17,12 @@ trainS <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 ```
 
 
-Second, we read in and clean up the names of the activities and data variable names. We strip the superfluous row numbers and parantheses, so our variable names will be tidier.
+Second, we read in and clean up the names of the activities and data variable names. We strip the superfluous row numbers and parantheses, and replace dahses with periods, so our variable names will be tidier.
 
 ```r
 raw.features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 features <- lapply(raw.features$V2, function(x) gsub("\\(\\)", "", x))
+features <- lapply(features, function(x) gsub("-", ".", x))
 raw.activities <- read.table("./UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
 activities <- raw.activities$V2
 ```
@@ -98,5 +97,11 @@ write.table(x = grouped.means, file = "data.txt", sep = "\t", row.names = FALSE)
 
 ========================================================
 
-How to access "data.txt"
-"data.txt" is a tab-delimited file in R doERQW$RQWERQWERQWERQWER
+#How to access "data.txt":
+
+"data.txt" is a tab-delimited file with column headers. To load it into R simply run:
+
+```r
+final.data <- read.table("data.txt", header = TRUE)
+```
+

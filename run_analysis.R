@@ -10,6 +10,7 @@ trainS  <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 #0. Load in the labels:
 raw.features  <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 features  <- lapply(raw.features$V2, function(x) gsub("\\(\\)", "", x))
+features  <- lapply(features, function(x) gsub("-", ".", x))
 raw.activities  <- read.table("./UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
 activities  <- raw.activities$V2
 
@@ -37,7 +38,7 @@ tidy.data  <- cbind(mergedY, mergedS, mergedX)
 grouped.means <- aggregate(mergedX, by=list(subject=tidy.data$subject, activity=tidy.data$activity), FUN=mean, na.remove = TRUE)
 #cleanup the names, to represent the computation of the mean
 colNames = names(grouped.means)
-colNames[-c(1,2)]  <- sapply(colNames[-c(1,2)], function(x) paste("mean-", x, sep=""))
+colNames[-c(1,2)]  <- sapply(colNames[-c(1,2)], function(x) paste("mean.", x, sep=""))
 names(grouped.means)  <- colNames
 
 #Save the tidy data sets to disk
