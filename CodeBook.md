@@ -15,8 +15,9 @@ activity
 
 The following columns are included and represent the means of the "means and standard deviations" assosiated with each "activity-subject" pair. Further description the the physical mean and processing of the data can be found in the README of the HAR dataset:
 
-mean.tBodyAcc.mean.X
+mean.tBodyAcc.mean.X 
 mean.tBodyAcc.mean.Y
+
 mean.tBodyAcc.mean.Z
 mean.tGravityAcc.mean.X
 mean.tGravityAcc.mean.Y
