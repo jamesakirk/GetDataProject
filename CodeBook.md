@@ -1,12 +1,12 @@
 CodeBook.md
 ========================================================
-##Columns in data:
+###Columns in data:
 
-###subject: an integer (1-30) uniquely identifying the human subject from whom the data was collected  
+*subject: an integer (1-30) uniquely identifying the human subject from whom the data was collected  
 
-###activity: a string identifying the activity in which the subject was engaged during data collection, can be:  
-WALKING  
-WALKING_UPSTAIRS  
+*activity: a string identifying the activity in which the subject was engaged during data collection, can be:  
+**WALKING  
+**WALKING_UPSTAIRS  
 WALKING_DOWNSTAIRS  
 SITTING  
 STANDING  
@@ -14,8 +14,8 @@ LAYING
 
 The following columns are included and represent the means of the "means and standard deviations" assosiated with each "activity-subject" pair. Further description the the physical mean and processing of the data can be found in the README of the HAR dataset:
 
-mean.tBodyAcc.mean.X  
-mean.tBodyAcc.mean.Y  
+*mean.tBodyAcc.mean.X  
+*mean.tBodyAcc.mean.Y  
 mean.tBodyAcc.mean.Z  
 mean.tGravityAcc.mean.X  
 mean.tGravityAcc.mean.Y  
